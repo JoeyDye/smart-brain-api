@@ -32,7 +32,7 @@ const getUser = id =>
 
 // Root
 app.get('/', (req, res) => {
-  res.json(database.users);
+  res.json('It is working!');
 });
 
 // Signin
