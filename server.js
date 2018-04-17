@@ -19,8 +19,8 @@ const db = knex({
   }
 });
 
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
 
 const getUser = id =>
   database.users.forEach(user => {
