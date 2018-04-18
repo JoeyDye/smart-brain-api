@@ -5,7 +5,7 @@ const cors = require('cors');
 const knex = require('knex');
 
 const register = require('./controllers/register');
-const signin = require('./controllers/signin');
+// const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 // Signin
-app.post('/signin', signin.handleSignin(db, bcrypt));
+// app.post('/signin', signin.handleSignin(db, bcrypt));
 
 // Register
 app.post('/register', register.handleRegister(db, bcrypt));
