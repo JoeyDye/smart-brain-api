@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 });
 
 // Signin
-// app.post('/signin', signin.handleSignin(db, bcrypt));
+app.post('/signin', signin.handleSignin(db, bcrypt));
 
 // Register
 app.post('/register', register.handleRegister(db, bcrypt));
