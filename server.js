@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
 const bcrypt = require('bcrypt-nodejs');
 const cors = require('cors');
 const knex = require('knex');
+
 const register = require('./controllers/register');
-const signIn = require('./controllers/signIn');
+const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
@@ -19,24 +19,18 @@ const db = knex({
   }
 });
 
+const app = express();
+
 app.use(cors());
 app.use(bodyParser.json());
 
-const getUser = id =>
-  database.users.forEach(user => {
-    if (user.id === id) {
-      found = true;
-      return res.json(user);
-    }
-  });
-
 // Root
 app.get('/', (req, res) => {
-  res.json('It is working!');
+  res.send('It is working!');
 });
 
 // Signin
-app.post('/signin', signIn.handleSignIn(db, bcrypt));
+app.post('/signin', signin.handleSignin(db, bcrypt));
 
 // Register
 app.post('/register', register.handleRegister(db, bcrypt));
