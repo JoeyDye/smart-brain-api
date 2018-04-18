@@ -5,7 +5,7 @@ const cors = require('cors');
 const knex = require('knex');
 
 const register = require('./controllers/register');
-const sign = require('./controllers/signin');
+const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 const image = require('./controllers/image');
 
